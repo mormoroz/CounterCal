@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="../../../resources/css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
             <nav>
                 <a  class="nav__link " href="#">Products</a>
                 <a  class="nav__link" href="#">Static</a>
-                <a  class="nav__link" href="#">LogIn/Sign</a>
+                <a  class="nav__link" href="../login">LogIn/Sign</a>
             </nav>
         </div>
     </div>

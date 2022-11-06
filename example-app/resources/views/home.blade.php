@@ -18,7 +18,7 @@
             <nav>
                 <a  class="nav__link " href="#">Products</a>
                 <a  class="nav__link" href="#">Static</a>
-                <a  class="nav__link" href="login">LogIn/Sign</a>
+                <a  class="nav__link" href="../login">LogIn/Sign</a>
             </nav>
         </div>
     </div>
