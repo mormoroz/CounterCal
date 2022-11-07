@@ -1,35 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+@section('content')
 
-
-    <title>My counter</title>
-</head>
-<body>
-<header class="header menu">
-    <div class="container">
-        <div class="header__inner main__menu">
-            <div class="header__logo">My calories</div>
-            <nav>
-                <a  class="nav__link " href="#">Products</a>
-                <a  class="nav__link" href="#">Static</a>
-                <a  class="nav__link" href="../login">LogIn/Sign</a>
-            </nav>
-        </div>
-    </div>
-</header>
-
+    @vite(['resources/js/app.js'])
 <section class="section">
     <div class="container"><!--Основной див,выровненный по центру-->
         <div class="inner"><!--Левый див для основной панели-->
             <div class="header_calories"><!--Див для отдельных полей (ячеек /шапка с данными)-->
                 <div class="icon_calculate">
-                    <img src="icons/icon_cals.svg" alt="icons" width="80" height="80">
+                    <img src="{{ Vite::asset('resources/icons/icon_cals.svg') }}" alt="icons" width="80" height="80" class="opacity-80">
                 </div>
                 <div class="two_layers">
                     <div class="header__inner">
@@ -61,7 +40,7 @@
 
             <div class="header_calories add_new_item"><!--Див для отдельных полей (ячеек /шапка с данными)-->
                 <div class="icon_calculate">
-                    <img class="btn-add" src="icons/plus.svg" alt="icons" width="30" height="30">
+                    <img class="btn-add" src="{{ Vite::asset('resources/icons/plus.svg') }}" alt="icons" width="30" height="30">
                 </div>
                 <div class="add__item"><p>Add Item</p></div>
             </div>
@@ -81,7 +60,7 @@
 
             <div class="header_calories add_new_item"><!--Див для отдельных полей (ячеек /шапка с данными)-->
                 <div class="icon_calculate">
-                    <img src="icons/plus.svg" alt="icons" width="30" height="30">
+                    <img src="{{ Vite::asset('resources/icons/plus.svg') }}" alt="icons" width="30" height="30">
                 </div>
                 <div class="add__item"><p>Add Item</p></div>
             </div>
@@ -100,7 +79,7 @@
 
             <div class="header_calories add_new_item"><!--Див для отдельных полей (ячеек /шапка с данными)-->
                 <div class="icon_calculate">
-                    <img class="btn-add" src="icons/plus.svg" alt="icons" width="30" height="30">
+                    <img class="btn-add" src="{{ Vite::asset('resources/icons/plus.svg') }}" alt="icons" width="30" height="30">
                 </div>
                 <div class="add__item">
                     <p>Add Item</p>
@@ -119,7 +98,7 @@
                         <div class="links-min">
                             <div class="link-min">
                                 <div class="header__inner"><p>Капучино Гранде без Сахара (Starbucks)</p>
-                                    <img class="check-icon" src="icons/check.svg" alt="" width="20px" height="20px"></div>
+                                    <img class="check-icon" src="{{ Vite::asset('resources/icons/check.svg') }}" alt="" width="20px" height="20px"></div>
 
                                 <div class="calories-data">
                                     <p>100g</p>
@@ -130,7 +109,7 @@
                             </div>
                             <div class="link-min">
                                 <div class="header__inner"> <p>Пастила Фруктовая Яблоко (Пастилушка)</p>
-                                    <img class="check-icon" src="icons/check.svg" alt="" width="20px" height="20px"></div>
+                                    <img class="check-icon" src="{{ Vite::asset('resources/icons/check.svg') }}" alt="" width="20px" height="20px"></div>
 
                                 <div class="calories-data">
                                     <p>100g</p>
@@ -141,7 +120,7 @@
                             </div>
                             <div class="link-min">
                                 <div class="header__inner"> <p>Пастила Фруктовая Яблоко (Пастилушка)</p>
-                                    <img class="check-icon" src="icons/check.svg" alt="" width="20px" height="20px"></div>
+                                    <img class="check-icon" src="{{ Vite::asset('resources/icons/check.svg') }}" alt="" width="20px" height="20px"></div>
 
                                 <div class="calories-data">
                                     <p>100g</p>
@@ -152,7 +131,7 @@
                             </div>
                             <div class="link-min">
                                 <div class="header__inner"> <p>Пастила Фруктовая Яблоко (Пастилушка)</p>
-                                    <img class="check-icon" src="icons/check.svg" alt="" width="20px" height="20px"></div>
+                                    <img class="check-icon" src="{{ Vite::asset('resources/icons/check.svg') }}" alt="" width="20px" height="20px"></div>
 
                                 <div class="calories-data">
                                     <p>100g</p>
@@ -179,9 +158,8 @@
     </div><!--container-->
 </section>
 
-<script src="../../resources/js/script.js"></script>
-</body>
-</html>
+@vite(['resources/js/script.js'])
+@endsection
 
 
 
