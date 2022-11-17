@@ -17,7 +17,7 @@
             <div class="header__logo">My calories</div>
             <nav>
                 <a  class="nav__link " href="#">Products</a>
-                <a  class="nav__link" href="#">Static</a>
+                <a  class="nav__link" href="../static">Static</a>
                 <a  class="nav__link" href="../login">LogIn/Sign</a>
             </nav>
         </div>

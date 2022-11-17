@@ -21,6 +21,11 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::get('/static', function () {
+    return view('static');
+});
+
+
 Route::get('/about', function () {
     return view('about');
 });
