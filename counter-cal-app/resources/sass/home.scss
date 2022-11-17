@@ -1,0 +1,79 @@
+// Fonts
+//@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+//@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+//Progressbar
+@import "react-circular-progressbar/dist/styles.css";
+
+
+/*Main Colors*/
+:root{
+    --countercal-app-first: #4eb63c;
+    --countercal-app-first-darker: #008003;
+    --countercal-app-bg: #e7ffe8;
+}
+
+
+
+.accordion{
+    --bs-accordion-bg: #f8fafc;
+    --bs-accordion-btn-color: #212529;
+    --bs-accordion-btn-bg: var(--bs-accordion-bg);
+    --bs-accordion-btn-focus-border-color: #000000;
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.1rem var(--countercal-app-bg);
+    --bs-accordion-active-color: var(--countercal-app-first-darker);
+    --bs-accordion-active-bg: var(--countercal-app-bg);
+    --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23008003'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--countercal-app-first);
+    --bs-btn-border-color: var(--countercal-app-first);
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--countercal-app-first-darker);
+    --bs-btn-hover-border-color: var(--countercal-app-first-darker);
+    --bs-btn-focus-shadow-rgb: 49, 132, 253;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--countercal-app-first-darker);
+    --bs-btn-active-border-color: var(--countercal-app-first-darker);
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: var(--countercal-app-first);
+    --bs-btn-disabled-border-color: var(--countercal-app-first);
+}
+
+.btn-circle {
+    width: 24px;
+    height: 24px;
+    padding: 0px 0px;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+
+#progress-circle{
+    width: 250px;
+    height: 250px;
+}
+
+.CircularProgressbar .CircularProgressbar-path {
+    stroke: var(--countercal-app-first);
+}
+.CircularProgressbar .CircularProgressbar-trail {
+    stroke: var(--countercal-app-bg);
+}
+.CircularProgressbar .CircularProgressbar-text {
+    fill: var(--countercal-app-first);
+}
+.CircularProgressbar .CircularProgressbar-background {
+    fill: var(--countercal-app-first-darker);
+}
+
