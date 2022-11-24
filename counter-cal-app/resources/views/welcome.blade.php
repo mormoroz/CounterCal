@@ -24,14 +24,14 @@
                 <div class="carousel-caption">
                     <h1>Счетчик калорий от CounterCal</h1>
                     <p class="lead">Трекер диеты и потери веса</p>
-                    <p><a class="btn btn-lg btn-light" href="#">Начать</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Начать</a></p>
                 </div>
             </div>
             <div class="carousel-item">
                 <img class="d-block w-100" src="{{ Vite::asset('resources/icons/strawberry.jpg') }}" alt="Второй слайд">
                 <div class="carousel-caption">
                     <h1>Example headline.</h1>
-                    <p class="lead">Some representative placeholder content for the first slide of the carousel.</p>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                     <p><a class="btn btn-lg btn-primary" href="#">Начать</a></p>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                 <img class="d-block w-100" src="{{ Vite::asset('resources/icons/strawberry.jpg') }}" alt="Третий слайд">
                 <div class="carousel-caption">
                     <h1>Example headline.</h1>
-                    <p class="lead">Some representative placeholder content for the first slide of the carousel.</p>
+                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                     <p><a class="btn btn-lg btn-primary" href="#">Начать</a></p>
                 </div>
             </div>
