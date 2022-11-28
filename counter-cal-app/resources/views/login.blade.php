@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up Form by Colorlib</title>
-
     <!-- Font Icon -->
-
-
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     @vite(['resources/css/style.css'])
 
     <!-- Main css -->
@@ -19,19 +18,28 @@
     <div class="container">
         <div class="signup-content">
             <div  class="image-position" style="background-image:url({{ Vite::asset('resources/icons/images_for_sign_2.jpeg')}})">
-
             </div>
             <div class="signup-form">
-                <form method="POST" class="login-form" id="login-form">
-
+                <form method="post" action="{{ route('login-form') }}" class="login-form" id="login-form">
+                    @csrf
                     <div class="form-row">
                         <h2>Авторизация</h2>
                         <h2 > <a class="register"  id="register"  href="#">Создать аккаунт?</a> </h2>
                     </div>
 
+                    @if($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
                     <div class="form-group">
                         <label for="email-login">Почта :</label>
-                        <input type="email" name="email-login" id="email-login" />
+                        <input type="text" name="email-login" id="email-login" />
                     </div>
                     <div class="form-group">
                         <label for="password-login">Пароль :</label>
@@ -39,13 +47,13 @@
                     </div>
 
                     <div class="form-submit">
-
                         <input type="submit" value="Войти" class="submit-login" name="submit-login" id="submit-login" />
                     </div>
                 </form>
             </div>
             <div class="signup-form">
-                <form method="POST" class="register-form" id="register-form">
+                <form method="post" action="{{ route('register-form') }}" class="register-form" id="register-form">
+                    @csrf
                     <div class="form-row">
                         <h2>Регистрация</h2>
                         <h2 > <a class="login"  id="login"  href="#">Уже есть аккаунт?</a> </h2>
@@ -53,11 +61,11 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Имя :</label>
-                            <input type="text" name="name" id="name" required/>
+                            <input type="text" name="name" id="name"/>
                         </div>
                         <div class="form-group">
                             <label for="father_name">Фамилия :</label>
-                            <input type="text" name="father_name" id="father_name" required/>
+                            <input type="text" name="father_name" id="father_name"/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -67,11 +75,11 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="height">Рост(см) :</label>
-                            <input type="number" name="height" id="height" required/>
+                            <input type="number" name="height" id="height"/>
                         </div>
                         <div class="form-group">
                             <label for="weight">Вес(кг) :</label>
-                            <input type="number" name="weight" id="weight" required/>
+                            <input type="number" name="weight" id="weight"/>
                         </div>
                     </div>
                     <div class="form-radio">
@@ -120,7 +128,7 @@
                     </div>
                     <div class="form-group">
                         <label for="email-sign">Почта :</label>
-                        <input type="email" name="email-sign" id="email-sign" />
+                        <input type="text" name="email-sign" id="email-sign" />
                     </div>
                     <div class="form-group">
                         <label for="password-sign">Пароль :</label>
@@ -130,6 +138,16 @@
                         <label for="password-repeat">Пароль :</label>
                         <input type="password" name="password-repeat" id="password-repeat">
                     </div>
+
+                    @if($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
                     <div class="form-submit">
                         <input type="submit" value="Сбросить все" class="submit-sign" name="reset" id="reset" />
@@ -145,5 +163,8 @@
 
 @vite(['resources/jquery/jquery.min.js'])
 @vite(['resources/js/main.js'])
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body><!-- These templates were made by Colorlib (https://colorlib.com) -->
 </html>
