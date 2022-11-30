@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AuthorizationController;
+use App\Http\Controllers\LogInController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +34,6 @@ Route::get('/about', function () {
 Route::get('/welcome', function () {
     return view('welcome');
 });
+
+Route::post('/login', [AuthorizationController::class, 'submit'])->name('login-form');
+Route::post('/signin', [LogInController::class, 'submit'])->name('register-form');

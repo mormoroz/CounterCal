@@ -5,19 +5,29 @@
     <div class="container">
         <div class="signup-content">
             <div class="signup-form">
-                <form method="POST" class="register-form" id="register-form">
+                <form method="post" action="{{ route('register-form') }}" class="register-form" id="register-form">
+                    @csrf
                     <div class="form-row">
                         <h2>Регистрация</h2>
                         <h2 > <a class="login"  id="login"  href="login">Eсть аккаунт?</a> </h2>
                     </div>
+                    @if($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Имя :</label>
-                            <input type="text" name="name" id="name" required/>
+                            <input type="text" name="name" id="name"/>
                         </div>
                         <div class="form-group">
                             <label for="father_name">Фамилия :</label>
-                            <input type="text" name="father_name" id="father_name" required/>
+                            <input type="text" name="father_name" id="father_name"/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -28,17 +38,13 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="height">Рост(см) :</label>
-                            <input type="number" name="height" id="height" required/>
+                            <input type="number" name="height" id="height"/>
                         </div>
                         <div class="form-group">
                             <label for="weight">Вес(кг) :</label>
-                            <input type="number" name="weight" id="weight" required/>
+                            <input type="number" name="weight" id="weight"/>
                         </div>
                     </div>
-
-
-
-
 
                     <div class="form-radio">
                         <label for="gender" class="radio-label">Пол :</label>
@@ -88,7 +94,7 @@
                     </div>
                     <div class="form-group">
                         <label for="email-sign">Почта :</label>
-                        <input type="email" name="email-sign" id="email-sign" />
+                        <input type="text" name="email-sign" id="email-sign" />
                     </div>
                     <div class="form-group">
                         <label for="password-sign">Пароль :</label>
@@ -98,7 +104,6 @@
                         <label for="password-repeat">Пароль :</label>
                         <input type="password" name="password-repeat" id="password-repeat">
                     </div>
-
                     <div class="form-submit">
                         <input type="submit" value="Сбросить все" class="submit-sign" name="reset" id="reset" />
                         <input type="submit" value="Зарегистрироваться" class="submit-sign" name="submit-sign" id="submit-sign" />
