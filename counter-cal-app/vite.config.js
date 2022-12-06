@@ -12,9 +12,10 @@ export default defineConfig({
                 'resources/js/script.js',
                 'resources/sass/app.scss',
                 'resources/css/app.css',
-                'resources/css/welcome.css'
+                'resources/css/welcome.css',
+                'resources/css/login.css'
             ],
-            
+
             refresh: true,
         }),
     ],
