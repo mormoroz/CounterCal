@@ -8,11 +8,11 @@
         <div class="signup-content">
 
             <div class="signup-form">
-                <form method="post" action="{{ route('login-form') }}" class="login-form" id="login-form">
+                <form method="post" action="/users/authenticate" class="login-form" id="login-form">
                     @csrf
                     <div class="form-row">
                         <h2 >Вход</h2>
-                        <h2 > <a class="register"  id="register"  href="signin">Создать аккаунт?</a> </h2>
+                        <h2 > <a class="register"  id="register"  href="/register">Создать аккаунт?</a> </h2>
                     </div>
                     @if($errors->any())
                         <div class="alert alert-danger">
@@ -25,7 +25,7 @@
                     @endif
                     <div class="form-group">
                         <label for="email-login">Почта :</label>
-                        <input type="text" name="email-login" id="email-login" />
+                        <input type="text" name="email-login" id="email-login" value="{{old('email-login')}}"/>
                     </div>
                     <div class="form-group">
                         <label for="password-login">Пароль :</label>
