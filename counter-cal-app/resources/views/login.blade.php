@@ -24,12 +24,12 @@
                         </div>
                     @endif
                     <div class="form-group">
-                        <label for="email-login">Почта :</label>
-                        <input type="text" name="email-login" id="email-login" value="{{old('email-login')}}"/>
+                        <label for="email">Почта :</label>
+                        <input type="text" name="email" id="email" value="{{old('email')}}"/>
                     </div>
                     <div class="form-group">
-                        <label for="password-login">Пароль :</label>
-                        <input type="password" name="password-login" id="password-login">
+                        <label for="password">Пароль :</label>
+                        <input type="password" name="password" id="password">
                     </div>
 
                     <div class="form-submit">

@@ -8,4 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class User_weight extends Model
 {
     use HasFactory;
+
+    //Mass assignable fields
+    protected $fillable = [
+        'user_id',
+        'weight',
+        'date'
+    ];
+
+    //Disable 'created_at', 'updated_at' fields
+    public $timestamps = false;
+
+    //Relationship to User
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
