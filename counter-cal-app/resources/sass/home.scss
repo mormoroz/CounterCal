@@ -16,6 +16,7 @@
     --countercal-app-first: #4eb63c;
     --countercal-app-first-darker: #008003;
     --countercal-app-bg: #e7ffe8;
+    --countercal-app-bg-lighter: #f0fff1;
 }
 
 
@@ -75,5 +76,9 @@
 }
 .CircularProgressbar .CircularProgressbar-background {
     fill: var(--countercal-app-first-darker);
+}
+
+.bg-cc-lighter{
+    background: var(--countercal-app-bg-lighter);
 }
 
