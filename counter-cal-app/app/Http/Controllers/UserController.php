@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AuthenticationRequest;
 use App\Http\Requests\RegisterRequest;
+use App\Models\User;
+use App\Models\User_weight;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -20,22 +22,65 @@ class UserController extends Controller
     }
 
     //Register New User
-    public function store(RegisterRequest $req){
+    public function store(RegisterRequest $request){
+        $formFields = $request->validate($request->rules());
 
-        //todo add user to DB
+        //todo filter weight from passing to User::create
+        $weight_value = $formFields['weight'];
+        unset($formFields['weight']);
+
+        // Hash Password
+        $formFields['password'] = bcrypt($formFields['password']);
+
+        // Create User
+        $user = User::create($formFields);
+        $user_id = $user->user_id;
+
+        $weight = User_weight::create([
+            'user_id' => $user_id,
+            'weight' => $weight_value,
+            'date' => now()
+        ]);
+
+        // Login
+        auth()->login($user);
+
+        return redirect('/');
     }
 
 
     //Authenticate User
-    public function authenticate(AuthenticationRequest $req){
+    public function authenticate(AuthenticationRequest $request){
 
-        //todo generate session
+        $formFields = $request->validate($request->rules());
+
+        if(auth()->attempt($formFields)) {
+            $request->session()->regenerate();
+
+            return redirect('/');
+        }
+
+        return back()->withErrors(['email' => 'Неверные данные'])->onlyInput('email');
     }
 
 
     // Logout User
     public function logout(Request $request) {
+        auth()->logout();
 
-        //todo invalidate session
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/');
+    }
+
+    //Manage Account
+    public function manage(){
+        //todo return view to "User Page"
+    }
+
+    //Edit User
+    public function edit(){
+        //todo edit some info
     }
 }

@@ -29,7 +29,7 @@
 
         <div class="d-flex col-md-3 justify-content-end">
 
-            {{--if logged in--}}
+            @auth
             <div class="dropdown text-end">
                 <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="https://avatars.githubusercontent.com/u/87639609" alt="mdo" width="32" height="32" class="rounded-circle">
@@ -37,12 +37,18 @@
                 <ul class="dropdown-menu text-small">
                     <li><a class="dropdown-item" href="#">Профиль</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="#">Выйти</a></li>
+                    <li>
+{{--                        <a class="dropdown-item" href="/logout">Выйти</a>--}}
+                        <form method="post" action="/logout">
+                            @csrf
+                            <button class="dropdown-item" type="submit">Выйти</button>
+                        </form>
+                    </li>
                 </ul>
             </div>
-            {{--else--}}
-    {{--        <button type="button" class="btn btn-primary">Войти</button>--}}
-            {{--endif--}}
+            @elseauth
+            <button type="button" class="btn btn-primary" href="/login">Войти</button>
+            @endauth
         </div>
     </header>
     @yield('content')

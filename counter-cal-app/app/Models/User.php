@@ -12,15 +12,23 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $primaryKey = 'user_id';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'password',
+        'weight',
+        'height',
+        'age',
+        'activity',
+        'mission'
     ];
 
     /**
@@ -41,4 +49,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    //Relationship to User_weight
+    public function weights(){
+        return $this->hasMany(User_weight::class);
+    }
+
+    //Get the latest weight of User
+    public function latestWeight()
+    {
+        return $this->hasOne(User_weight::class)->latestOfMany();
+    }
 }

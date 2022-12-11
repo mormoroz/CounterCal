@@ -22,12 +22,12 @@
                     @endif
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="name">Имя :</label>
-                            <input type="text" name="name" id="name" value="{{old('name')}}"/>
+                            <label for="first_name">Имя :</label>
+                            <input type="text" name="first_name" id="first_name" value="{{old('first_name')}}"/>
                         </div>
                         <div class="form-group">
-                            <label for="father_name">Фамилия :</label>
-                            <input type="text" name="father_name" id="father_name" value="{{old('father_name')}}"/>
+                            <label for="last_name">Фамилия :</label>
+                            <input type="text" name="last_name" id="last_name" value="{{old('last_name')}}"/>
                         </div>
                     </div>
                     <div class="form-group">
@@ -62,43 +62,43 @@
 
 
                     <div class="form-radio">
-                        <label for="goal" class="radio-label">Цель:</label>
+                        <label for="mission" class="radio-label">Цель:</label>
                         <div class="form-radio-item">
-                            <input type="radio" name="goal" id="loss" value="0" @if(old('goal') == 0) checked @endif>
+                            <input type="radio" name="mission" id="loss" value="0" @if(old('mission') == 0) checked @endif>
                             <label for="loss">Похудение</label>
                             <span class="check"></span>
                         </div>
                         <div class="form-radio-item">
-                            <input type="radio" name="goal" id="normal" value="1" @if(old('goal') == 1) checked @endif>
+                            <input type="radio" name="mission" id="normal" value="1" @if(old('mission') == 1) checked @endif>
                             <label for="normal">Поддержание формы</label>
                             <span class="check"></span>
                         </div>
                         <div class="form-radio-item">
-                            <input type="radio" name="goal" id="gain" value="2" @if(old('goal') == 2) checked @endif>
+                            <input type="radio" name="mission" id="gain" value="2" @if(old('mission') == 2) checked @endif>
                             <label for="gain">Набор массы</label>
                             <span class="check"></span>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="physical-activity">Физическая активность :</label>
+                        <label for="activity">Физическая активность :</label>
                         <div class="form-select-1">
-                            <select name="physical-activity" id="physical-activity">
-                                <option value="min" {{ (old("physical-activity") == "min" ? "selected":"") }}">минимальная/отсутствие тренировок</option>
-                                <option value="light" {{ (old("physical-activity") == "light" ? "selected":"") }}>легкая нагрузка 1-3 раза в неделю</option>
-                                <option value="middle" {{ (old("physical-activity") == "middle" ? "selected":"") }}>3-5 тренировок в неделю</option>
-                                <option value="high" {{ (old("physical-activity") == "high" ? "selected":"") }}>высокая(спортсмены)</option>
+                            <select name="activity" id="activity">
+                                <option value="min" {{ (old("activity") == "min" ? "selected":"") }}">минимальная/отсутствие тренировок</option>
+                                <option value="light" {{ (old("activity") == "light" ? "selected":"") }}>легкая нагрузка 1-3 раза в неделю</option>
+                                <option value="middle" {{ (old("activity") == "middle" ? "selected":"") }}>3-5 тренировок в неделю</option>
+                                <option value="high" {{ (old("activity") == "high" ? "selected":"") }}>высокая(спортсмены)</option>
                             </select>
                             <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="email-sign">Почта :</label>
-                        <input type="text" name="email-sign" id="email-sign" value="{{old('email-sign')}}"/>
+                        <label for="email">Почта :</label>
+                        <input type="text" name="email" id="email" value="{{old('email')}}"/>
                     </div>
                     <div class="form-group">
-                        <label for="password-sign">Пароль :</label>
-                        <input type="password" name="password-sign" id="password-sign">
+                        <label for="password">Пароль :</label>
+                        <input type="password" name="password" id="password">
                     </div>
                     <div class="form-group">
                         <label for="password-repeat">Пароль :</label>
