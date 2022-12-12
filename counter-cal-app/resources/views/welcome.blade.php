@@ -46,8 +46,8 @@
                 <div class="container">
                     <div class="carousel-caption" id="end">
                         <h1>С нами у вас всё получится</h1>
-                        <p>Мы поможем вам начать здоровый образ жизни. Присоединяйтесь!</p>
-                        <p><a class="btn btn-lg btn-primary" href="/login">Начать</a></p>
+                        <p class="fs-5 lead">Мы поможем вам начать здоровый образ жизни. Присоединяйтесь!</p>
+                        <p class="fs-5 lead"><a class="btn btn-lg btn-primary" href="/login">Начать</a></p>
                     </div>
                 </div>
             </div>
