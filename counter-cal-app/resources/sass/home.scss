@@ -32,7 +32,7 @@
     --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23008003'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 
-.btn-primary {
+.btn-primary{
     --bs-btn-color: #fff;
     --bs-btn-bg: var(--countercal-app-first);
     --bs-btn-border-color: var(--countercal-app-first);
@@ -47,6 +47,31 @@
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: var(--countercal-app-first);
     --bs-btn-disabled-border-color: var(--countercal-app-first);
+}
+
+.btn-outline-primary {
+    color: var(--countercal-app-first);
+    border-color: var(--countercal-app-first);
+}
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: var(--countercal-app-first);
+    border-color: var(--countercal-app-first);
+}
+.btn-check:focus + .btn-outline-primary, .btn-outline-primary:focus {
+    box-shadow: 0 0 0 0.25rem var(--countercal-app-first-darker);
+}
+.btn-check:checked + .btn-outline-primary, .btn-check:active + .btn-outline-primary, .btn-outline-primary:active, .btn-outline-primary.active, .btn-outline-primary.dropdown-toggle.show {
+    color: #fff;
+    background-color: var(--countercal-app-first);
+    border-color: var(--countercal-app-first);
+}
+.btn-check:checked + .btn-outline-primary:focus, .btn-check:active + .btn-outline-primary:focus, .btn-outline-primary:active:focus, .btn-outline-primary.active:focus, .btn-outline-primary.dropdown-toggle.show:focus {
+    box-shadow: 0 0 0 0.25rem var(--countercal-app-first-darker);
+}
+.btn-outline-primary:disabled, .btn-outline-primary.disabled {
+    color: var(--countercal-app-first);
+    background-color: transparent;
 }
 
 .btn-circle {

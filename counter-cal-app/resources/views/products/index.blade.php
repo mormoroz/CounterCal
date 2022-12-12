@@ -17,7 +17,7 @@
                                         <p class="h2">{{$product->product_name}}</p>
                                         <p class="h5 text-muted">{{$product->manufacturer}}</p>
                                     </div>
-                                    <div class="border rounded-1 bg p-1 mt-4 bg-cc-lighter">
+                                    <div class="border rounded-1 bg p-1 my-4 bg-cc-lighter">
                                         <div class="row">
                                             <p class="h4"><strong>Каллории:</strong><span class="h4 m-2"><strong>{{$product->calorie}}</strong></span></p>
                                             <p class="h6">Белки:<span class="h6 m-2">{{$product->protein}}</span></p>
@@ -25,6 +25,7 @@
                                             <p class="h6">Углеводы:<span class="h6 m-2">{{$product->carbohydrates}}</span></p>
                                         </div>
                                     </div>
+                                    <a href="#" class="btn btn-outline-primary btn-sm stretched-link">Добавить</a>
                                 </div>
                             </div>
                         </div>
