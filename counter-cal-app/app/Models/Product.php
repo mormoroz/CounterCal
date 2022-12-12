@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
+    public function scopeFilter($query, array $filters) {
+        if($filters['search'] ?? false) {
+            $query->where('product_name', 'like', '%' . request('search') . '%')
+                ->orWhere('manufacturer', 'like', '%' . request('search') . '%');
+        }
+    }
 }

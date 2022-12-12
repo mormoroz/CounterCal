@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 })->middleware('auth')->name("home");
+
+// Show Products Page
+Route::get('/products', [ProductController::class, 'index'])->middleware('auth');
 
 // Show About Page
 Route::get('/about', function () {
