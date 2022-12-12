@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     @vite(['resources/js/app.js', 'resources/sass/app.scss'])
-
+    @yield('style')
 
     <title>My counter</title>
 </head>
@@ -53,6 +53,7 @@
             @endauth
         </div>
     </header>
+    @yield('slider')
     @yield('content')
 
     <div class="container">
@@ -85,5 +86,6 @@
         </footer>
     </div>
 </div>
+@yield('link')
 </body>
 </html>

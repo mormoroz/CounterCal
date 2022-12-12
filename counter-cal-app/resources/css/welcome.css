@@ -16,11 +16,32 @@
 }
 
 .carousel-caption{
+    z-index: 2000;
     bottom: 150px;
     text-align: left;
-    position: fixed;
+    /*position: fixed;*/
     left: 170px;
     right: 45%;
+}
+
+#start{
+    bottom: 150px;
+    text-align: left;
+    /*position: fixed;*/
+    left: 170px;
+    right: 45%;
+    width: 60%;
+}
+
+#middle{
+    left: 500px;
+    width: 40%;
+    bottom: 60px;
+}
+
+#end{
+    width: 50%;
+    bottom: 150px;
 }
 
 .featurette-heading {
@@ -31,11 +52,6 @@
 hr{
     margin-top: 3.5rem;
     margin-bottom: 3.5rem;
-}
-
-.container {
-    margin-top: 30px;
-    max-width: 90%;
 }
 
 .col-md-5{
