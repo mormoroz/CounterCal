@@ -6,6 +6,7 @@
                 <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-primary" type="submit">Search</button>
             </form>
+            <x-flash-message />
             <div class="row my-5" name="products_index">
                 @unless(count($products) == 0)
 
@@ -25,7 +26,7 @@
                                             <p class="h6">Углеводы:<span class="h6 m-2">{{$product->carbohydrates}}</span></p>
                                         </div>
                                     </div>
-                                    <a href="#" class="btn btn-outline-primary btn-sm stretched-link">Добавить</a>
+                                    <button class="btn btn-outline-primary btn-sm stretched-link" data-bs-toggle="modal" data-bs-target="#addModal" data-bs-productID="{{$product->product_id}}">Добавить</button>
                                 </div>
                             </div>
                         </div>
@@ -33,11 +34,44 @@
                 @else
                     <p>No products found</p>
                 @endunless
-
+                </div>
+            </div>
+        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Добавить</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="/meal" method="post" >
+                            @csrf
+                            <input type="hidden" id="product_id" name="product_id">
+                            <div class="mb-3">
+                                <label for="mass_factor" class="col-form-label">Количество (в граммах):</label>
+                                <input type="text" class="form-control" id="mass_factor" name="mass_factor">
+                            </div>
+                            <div class="mb-3">
+                                <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="meal_time">
+                                    <option selected="">Время приема</option>
+                                    <option value="0">Завтрак</option>
+                                    <option value="1">Обед</option>
+                                    <option value="2">Ужин</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                                <button type="submit" class="btn btn-primary">Добавить</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+        </div>
 
     </div>
+
+    @vite(['resources/js/products.index.js'])
 
 @endsection

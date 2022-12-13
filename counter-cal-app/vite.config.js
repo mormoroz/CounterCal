@@ -10,6 +10,7 @@ export default defineConfig({
                 'resources/jsx/home.jsx',
                 'resources/js/app.js',
                 'resources/js/script.js',
+                'resources/js/products.index.js',
                 'resources/sass/app.scss',
                 'resources/css/app.css',
                 'resources/css/welcome.css',

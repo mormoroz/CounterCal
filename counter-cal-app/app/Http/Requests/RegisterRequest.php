@@ -19,6 +19,7 @@ class RegisterRequest extends FormRequest
             'first_name' => 'required',
             'last_name' => 'required',
             'age' => 'required',
+            'gender' => 'required|integer|between:0,1',
             'height' => 'required',
             'weight' => 'required|integer|between:15,500',
             'activity' => 'required',

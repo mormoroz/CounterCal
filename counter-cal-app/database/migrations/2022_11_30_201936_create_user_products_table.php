@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->foreignId('product_id');
             $table->float('mass_factor');
+            $table->integer('meal_time');
             $table->timestamp('date')->nullable();
         });
     }

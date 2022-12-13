@@ -9,6 +9,8 @@ class User_weight extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'user_weight_id';
+
     //Mass assignable fields
     protected $fillable = [
         'user_id',

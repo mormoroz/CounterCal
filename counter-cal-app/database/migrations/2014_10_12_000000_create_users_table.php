@@ -23,6 +23,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->float('height');
             $table->integer('age');
+            $table->integer('gender');
             $table->string('activity');
             $table->string('mission');
             $table->timestamps();
