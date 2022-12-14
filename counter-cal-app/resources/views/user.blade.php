@@ -27,13 +27,15 @@
                                     <div class="col-5 mb-3">
                                         <h6>Имя</h6>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="name">
+                                            <input type="text" class="form-control" id="name"
+                                                   value="{{ $data->first_name }}">
                                         </div>
                                     </div>
                                     <div class="col-5 mb-3">
                                         <h6>Фамилия</h6>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="surname">
+                                            <input type="text" class="form-control" id="surname"
+                                                   value="{{ $data->last_name }}">
                                         </div>
                                     </div>
                                 </div>
@@ -41,13 +43,14 @@
                                     <div class="col-5 mb-3">
                                         <h6>Возраст</h6>
                                         <div class="form-group">
-                                            <input type="number" class="form-control" id="age">
+                                            <input type="number" class="form-control" id="age" value="{{ $data->age }}">
                                         </div>
                                     </div>
                                     <div class="col-5 mb-3">
                                         <h6>Рост(см)</h6>
                                         <div class="form-group">
-                                            <input type="number" class="form-control" id="height">
+                                            <input type="number" class="form-control" id="height"
+                                                   value="{{ $data->height }}">
                                         </div>
                                     </div>
                                 </div>
@@ -55,7 +58,8 @@
                                     <div class="col-5 mb-3">
                                         <h6>Вес(кг)</h6>
                                         <div class="form-group">
-                                            <input type="int" class="form-control" id="weight">
+                                            <input type="number" class="form-control" id="weight"
+                                                   value="{{ $data->weight }}">
                                         </div>
                                     </div>
                                     <div class="col-4 mb-3">
@@ -76,7 +80,8 @@
                                         <h6>Пол</h6>
                                         <div class="form-radio">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                <input class="form-check-input" @checked(data->gender == "Male")
+                                                type="radio" name="inlineRadioOptions"
                                                        id="inlineRadio1" value="option1">
                                                 <label class="form-check-label" for="inlineRadio1">Мужской</label>
                                             </div>
@@ -115,7 +120,7 @@
                                     <div class="mb-3">
                                         <h6>Почта</h6>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" id="email">
+                                            <input type="email" class="form-control" id="email" value="{{ $data->email }}">
                                         </div>
                                     </div>
                                 </div>
@@ -123,13 +128,13 @@
                                     <div class="mb-3">
                                         <h6>Пароль</h6>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" id="password">
+                                            <input type="password" class="form-control" id="password" value="">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="mb-3">
-                                        <h6>Пароль</h6>
+                                        <h6>Повторите пароль</h6>
                                         <div class="form-group">
                                             <input type="password" class="form-control" id="password-repeat">
                                         </div>

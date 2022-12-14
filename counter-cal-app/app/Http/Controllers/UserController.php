@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\AuthenticationRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
@@ -76,7 +76,10 @@ class UserController extends Controller
 
     //Manage Account
     public function manage(){
-        //todo return view to "User Page"
+        $user = Auth::user();
+//        print_r($user);
+        dd($user->all());
+//        return view('user', ['data' => $user]);
     }
 
     //Edit User

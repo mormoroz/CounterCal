@@ -38,7 +38,7 @@
                     <img src="https://avatars.githubusercontent.com/u/87639609" alt="mdo" width="32" height="32" class="rounded-circle">
                 </a>
                 <ul class="dropdown-menu text-small">
-                    <li><a class="dropdown-item" href="#">Профиль</a></li>
+                    <li><a class="dropdown-item" href="{{ route('user') }}">Профиль</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li>
                         <form method="post" action="/logout">
