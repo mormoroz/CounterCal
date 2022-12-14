@@ -16,7 +16,7 @@
                              style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
                             <img src="{{ Vite::asset('resources/icons/user.png') }}"
                                  alt="Avatar" class="img-fluid my-5" style="width: 150px;"/>
-                            <h4>Шарифуллина Виктория</h4>
+                            <h4>{{ $data->last_name }} {{ $data->first_name }}</h4>
                             <button type="button" class="btn btn-light mt-5 lead">Сохранить изменения</button>
                         </div>
                         <div class="col-md-8">
@@ -66,10 +66,23 @@
                                         <h6>Физическая активность</h6>
                                         <div class="form-select-1 form-select-l">
                                             <select name="activity" id="activity">
-                                                <option value="min">минимальная/отсутствие тренировок</option>
-                                                <option value="light">легкая нагрузка 1-3 раза в неделю</option>
-                                                <option value="middle">3-5 тренировок в неделю</option>
-                                                <option value="high">высокая(спортсмены)</option>
+                                                <option
+                                                    value="{{ $data->activity }}" {{ ( $data->activity == 'light') ? 'selected' : '' }}>
+                                                    легкая нагрузка 1-3 раза в неделю
+                                                </option>
+                                                <option
+                                                    value="{{ $data->activity }}" {{ ( $data->activity == 'min') ? 'selected' : '' }}>
+                                                    минимальная/отсутствие тренировок
+                                                </option>
+                                                <option
+                                                    value="{{ $data->activity }}" {{ ( $data->activity == 'middle') ? 'selected' : '' }}>
+                                                    3-5 тренировок в неделю
+                                                </option>
+                                                <option
+                                                    value="{{ $data->activity }}" {{ ( $data->activity == 'high') ? 'selected' : '' }}>
+                                                    высокая(спортсмены)
+                                                </option>
+
                                             </select>
                                             <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
                                         </div>
@@ -80,13 +93,15 @@
                                         <h6>Пол</h6>
                                         <div class="form-radio">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input"
+                                                <input class="form-check-input" @checked($data->gender == "0")
                                                 type="radio" name="inlineRadioOptions"
                                                        id="inlineRadio1" value="option1">
                                                 <label class="form-check-label" for="inlineRadio1">Мужской</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                <input class="form-check-input"
+                                                       @checked($data->gender == "1") type="radio"
+                                                       name="inlineRadioOptions"
                                                        id="inlineRadio2" value="option2">
                                                 <label class="form-check-label" for="inlineRadio2">Женский</label>
                                             </div>
@@ -98,18 +113,23 @@
                                         <h6>Цель</h6>
                                         <div class="form-radio">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions1"
+                                                <input class="form-check-input" @checked($data->mission == "0")
+                                                type="radio" name="inlineRadioOptions1"
                                                        id="inlineRadio1" value="option1">
                                                 <label class="form-check-label" for="inlineRadio1">Похудение</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions1"
+                                                <input class="form-check-input"
+                                                       @checked($data->mission == "1") type="radio"
+                                                       name="inlineRadioOptions1"
                                                        id="inlineRadio2" value="option2">
                                                 <label class="form-check-label" for="inlineRadio2">Поддержание
                                                     формы</label>
                                             </div>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" name="inlineRadioOptions1"
+                                                <input class="form-check-input"
+                                                       @checked($data->mission == "2") type="radio"
+                                                       name="inlineRadioOptions1"
                                                        id="inlineRadio3" value="option3">
                                                 <label class="form-check-label" for="inlineRadio3">Набор массы</label>
                                             </div>
@@ -120,7 +140,8 @@
                                     <div class="mb-3">
                                         <h6>Почта</h6>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" id="email" value="{{ $data->email }}">
+                                            <input type="email" class="form-control" id="email"
+                                                   value="{{ $data->email }}">
                                         </div>
                                     </div>
                                 </div>

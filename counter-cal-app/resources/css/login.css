@@ -45,14 +45,14 @@ input:focus, select:focus, textarea:focus {
     -ms-box-shadow: none !important; }
 
 input[type=checkbox] {
-    appearance: checkbox !important;
+    /*appearance: checkbox !important;*/
     -moz-appearance: checkbox !important;
     -webkit-appearance: checkbox !important;
     -o-appearance: checkbox !important;
     -ms-appearance: checkbox !important; }
 
 input[type=radio] {
-    appearance: radio !important;
+    /*appearance: radio !important;*/
     -moz-appearance: radio !important;
     -webkit-appearance: radio !important;
     -o-appearance: radio !important;
@@ -78,13 +78,15 @@ input:-webkit-autofill {
     -ms-box-shadow: 0 0 0 30px transparent inset; }
 
 h2 {
+    margin-bottom: 1.25rem !important;
     line-height: 1.66;
     padding-left: 15px;
     font-weight: 500;
     color: #212529;
     font-family: 'Open Sans', sans-serif;
-    margin: 0 0 15px;
 }
+
+
 
 .clear {
     clear: both; }
@@ -294,12 +296,27 @@ select {
     text-align: right;
     padding-top: 20px; }
 
+.lead {
+     font-size: 1rem;
+    font-weight: 400;
+}
 
-.submit-sign, .submit-login {
-    width: 150px;
-    height: 40px;
+h2, .h2 {
+    font-size: 2rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.login{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.submit-sign {
+    font-size: 1rem;
+    font-weight: 400;
+    width: auto;
+    height: auto;
     display: inline-block;
-    font-family: 'Poppins';
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 16px;
     padding: 10px;
@@ -308,8 +325,23 @@ select {
 
     cursor: pointer; }
 
+.submit-login {
+    font-size: 1rem;
+    font-weight: 400;
+    width: 35%;
+    height: auto;
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 #reset {
-    background: #f8f8f8;
+    background: #f2f2f2;
     color: #999;
     margin-right: 8px; }
 #reset:hover {

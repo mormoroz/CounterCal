@@ -9,7 +9,7 @@ use App\Models\User;
 use App\Models\User_weight;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Auth;
+
 
 class UserController extends Controller
 {
@@ -217,8 +217,6 @@ class UserController extends Controller
     //Manage Account
     public function manage(){
         $user = Auth::user();
-//        print_r($user);
-//        dd($user->all());
         return view('user', ['data' => $user]);
     }
 
