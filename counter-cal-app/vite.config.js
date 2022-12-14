@@ -13,7 +13,8 @@ export default defineConfig({
                 'resources/sass/app.scss',
                 'resources/css/app.css',
                 'resources/css/welcome.css',
-                'resources/css/login.css'
+                'resources/css/login.css',
+                'resources/css/user.css'
             ],
 
             refresh: true,
