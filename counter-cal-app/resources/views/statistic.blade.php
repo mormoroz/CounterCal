@@ -2,7 +2,7 @@
 
 @section('style')
     @vite(['resources/css/welcome.css'])
-    @vite(['resources/js/statistic.js'])
+
 @endsection
 
 
@@ -10,7 +10,8 @@
     <div class="container marketing">
         <!-- START THE FEATURETTES -->
         <div class="row featurette">
-            <div class="col-md-7">
+            <div class="col-md-10 ml-10">
+
                 <canvas id="lineChart"></canvas>
 
             </div>
@@ -27,39 +28,31 @@
         type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
     <script>//line
+        $(function(){
+        var cData = JSON.parse(`<?php echo $chart_data; ?>`);
         var ctxL = document.getElementById("lineChart").getContext('2d');
         var myLineChart = new Chart(ctxL, {
             type: 'line',
             data: {
-                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                labels: cData.label,
                 datasets: [{
-                    label: "My First dataset",
-                    data: [65, 59, 80, 81, 56, 55, 40],
+                    label: "Динамика изменения веса",
+                    data: cData.data,
                     backgroundColor: [
-                        'rgba(105, 0, 132, .2)',
+                        'rgba(3, 185, 44, .2)',
                     ],
                     borderColor: [
-                        'rgba(200, 99, 132, .7)',
+                        'rgb(3,185,44)',
                     ],
-                    borderWidth: 2
-                },
-                    {
-                        label: "My Second dataset",
-                        data: [28, 48, 40, 19, 86, 27, 90],
-                        backgroundColor: [
-                            'rgba(0, 137, 132, .2)',
-                        ],
-                        borderColor: [
-                            'rgba(0, 10, 130, .7)',
-                        ],
-                        borderWidth: 2
-                    }
-                ]
+                    borderWidth: 1
+                }]
             },
             options: {
                 responsive: true
             }
+        })
         });</script>
 
     <!-- Optional JavaScript -->

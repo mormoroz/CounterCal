@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ChartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,9 +28,7 @@ Route::get('/products', [ProductController::class, 'index'])->middleware('auth')
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/statistic', function () {
-    return view('statistic');
-});
+
 
 // Show Welcome Page
 Route::get('/welcome', function () {
@@ -50,3 +49,6 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 // Log User Out
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
+
+
+Route::get('statistic', [ChartController::class, 'index']);
