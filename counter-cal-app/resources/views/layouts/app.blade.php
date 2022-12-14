@@ -25,7 +25,7 @@
             <li><a href="/" class="nav-link px-2 link-dark">Главная</a></li>
             @auth
             <li><a href="/products" class="nav-link px-2 link-dark">Продукты</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">Статистика</a></li>
+            <li><a href="/statistic" class="nav-link px-2 link-dark">Статистика</a></li>
             @endauth
             <li><a href="/about" class="nav-link px-2 link-dark">О нас</a></li>
         </ul>

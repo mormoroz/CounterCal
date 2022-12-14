@@ -10,7 +10,7 @@
     <div class="container marketing">
         <!-- START THE FEATURETTES -->
         <div class="row featurette">
-            <div class="col-md-10 ml-10">
+            <div class="col-md-10 mx-auto">
 
                 <canvas id="lineChart"></canvas>
 
@@ -30,7 +30,7 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
     <script>//line
-        $(function(){
+
         var cData = JSON.parse(`<?php echo $chart_data; ?>`);
         var ctxL = document.getElementById("lineChart").getContext('2d');
         var myLineChart = new Chart(ctxL, {
@@ -53,7 +53,7 @@
                 responsive: true
             }
         })
-        });</script>
+        ;</script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
