@@ -59,7 +59,7 @@
                                         <h6>Вес(кг)</h6>
                                         <div class="form-group">
                                             <input type="number" class="form-control" id="weight"
-                                                   value="{{ $data->weight }}">
+                                                   value="{{ $user_weight->weight }}">
                                         </div>
                                     </div>
                                     <div class="col-4 mb-3">
