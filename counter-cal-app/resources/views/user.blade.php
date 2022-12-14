@@ -81,12 +81,12 @@
                                         <div class="col-4 mb-3">
                                             <h6>Физическая активность</h6>
                                             <div class="form-select-1 form-select-l">
-                                                <select name="activityForm" id="activityForm">
-                                                    <option value="light" {{ ( $data->activity == 'light') ? 'selected' : '' }}>
-                                                        легкая нагрузка 1-3 раза в неделю
-                                                    </option>
+                                                <select name="activityForm" id="selectForm">
                                                     <option value="min" {{ ( $data->activity == 'min') ? 'selected' : '' }}>
                                                         минимальная/отсутствие тренировок
+                                                    </option>
+                                                    <option value="light" {{ ( $data->activity == 'light') ? 'selected' : '' }}>
+                                                        легкая нагрузка 1-3 раза в неделю
                                                     </option>
                                                     <option value="middle" {{ ( $data->activity == 'middle') ? 'selected' : '' }}>
                                                         3-5 тренировок в неделю
