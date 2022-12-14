@@ -24,8 +24,8 @@
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><a href="/" class="nav-link px-2 link-dark">Главная</a></li>
             @auth
-            <li><a href="/products" class="nav-link px-2 link-dark">Продукты</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">Статистика</a></li>
+                <li><a href="/products" class="nav-link px-2 link-dark">Продукты</a></li>
+                <li><a href="/statistic" class="nav-link px-2 link-dark">Статистика</a></li>
             @endauth
             <li><a href="/about" class="nav-link px-2 link-dark">О нас</a></li>
         </ul>
@@ -33,23 +33,23 @@
         <div class="d-flex col-md-3 justify-content-end">
 
             @auth
-            <div class="dropdown text-end">
-                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="https://avatars.githubusercontent.com/u/87639609" alt="mdo" width="32" height="32" class="rounded-circle">
-                </a>
-                <ul class="dropdown-menu text-small">
-                    <li><a class="dropdown-item" href="#">Профиль</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li>
-                        <form method="post" action="/logout">
-                            @csrf
-                            <button class="dropdown-item" type="submit">Выйти</button>
-                        </form>
-                    </li>
-                </ul>
-            </div>
+                <div class="dropdown text-end">
+                    <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://avatars.githubusercontent.com/u/87639609" alt="mdo" width="32" height="32" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu text-small">
+                        <li><a class="dropdown-item" href="#">Профиль</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <form method="post" action="/logout">
+                                @csrf
+                                <button class="dropdown-item" type="submit">Выйти</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
             @elseauth
-            <button type="button" class="btn btn-primary" href="/login">Войти</button>
+                <button type="button" class="btn btn-primary" href="/login">Войти</button>
             @endauth
         </div>
     </header>

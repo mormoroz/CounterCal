@@ -9,8 +9,6 @@ class User_weight extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'user_weight_id';
-
     //Mass assignable fields
     protected $fillable = [
         'user_id',
@@ -20,6 +18,10 @@ class User_weight extends Model
 
     //Disable 'created_at', 'updated_at' fields
     public $timestamps = false;
+
+    protected $casts = [
+        'date' => 'datetime'
+    ];
 
     //Relationship to User
     public function user(){

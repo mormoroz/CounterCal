@@ -27,6 +27,7 @@ Route::get('/products', [ProductController::class, 'index'])->middleware('auth')
 Route::get('/about', function () {
     return view('about');
 });
+Route::get('statistic', [ChartController::class, 'index'])->middleware('auth');
 
 // Show Welcome Page
 Route::get('/welcome', function () {
