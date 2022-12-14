@@ -19,6 +19,10 @@ class User_weight extends Model
     //Disable 'created_at', 'updated_at' fields
     public $timestamps = false;
 
+    protected $casts = [
+        'date' => 'datetime'
+    ];
+
     //Relationship to User
     public function user(){
         return $this->belongsTo(User::class);

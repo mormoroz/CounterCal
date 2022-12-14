@@ -53,7 +53,7 @@ class User extends Authenticatable
 
     //Relationship to User_weight
     public function weights(){
-        return $this->hasMany(User_weight::class);
+        return $this->hasMany(User_weight::class, 'user_id');
     }
 
     //Get the latest weight of User

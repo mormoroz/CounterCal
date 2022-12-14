@@ -51,4 +51,4 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 
-Route::get('statistic', [ChartController::class, 'index']);
+Route::get('statistic', [ChartController::class, 'index'])->middleware('auth');

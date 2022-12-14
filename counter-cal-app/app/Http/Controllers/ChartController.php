@@ -19,14 +19,15 @@ class ChartController extends Controller
 
     {
 
-        $record = User_weight::select(\DB::raw(("DAYNAME(date) as day_name,DAY(date) as day,weight")))
-            ->get();
+        $records = auth()->user()->weights()->get();
+
+//        dd($records);
 
         $data = [];
 
-        foreach($record as $row) {
-            $data['label'][] = $row->day_name;
-            $data['data'][] = (int) $row->weight;
+        foreach($records as $record) {
+            $data['label'][] = $record->date->format('d.m.Y');
+            $data['data'][] = (int) $record->weight;
         }
 
         $data['chart_data'] = json_encode($data);
