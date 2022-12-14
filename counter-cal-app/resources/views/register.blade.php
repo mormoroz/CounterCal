@@ -101,7 +101,7 @@
                         <input type="password" name="password" id="password">
                     </div>
                     <div class="form-group">
-                        <label for="password-repeat">Пароль :</label>
+                        <label for="password-repeat">Повторите пароль :</label>
                         <input type="password" name="password-repeat" id="password-repeat">
                     </div>
                     <div class="form-submit">
