@@ -253,8 +253,15 @@ class UserController extends Controller
         $weight -> weight = $weight_value;
         $weight -> date = now();
 
+        $user->updated_at = now();
+
         $user->save();
-        $weight->save();
+
+        User_weight::create([
+            'user_id' => $user_id,
+            'weight' => $weight_value,
+            'date' => now()
+        ]);
 
         return redirect('/user');
     }
