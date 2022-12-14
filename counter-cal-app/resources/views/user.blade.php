@@ -49,7 +49,7 @@
                                     <div class="col-5 mb-3">
                                         <h6>Рост(см)</h6>
                                         <div class="form-group">
-                                            <input type="number" class="form-control" id="height"
+                                            <input type="number" step="1" class="form-control" id="height"
                                                    value="{{ $data->height }}">
                                         </div>
                                     </div>
@@ -58,7 +58,7 @@
                                     <div class="col-5 mb-3">
                                         <h6>Вес(кг)</h6>
                                         <div class="form-group">
-                                            <input type="number" class="form-control" id="weight"
+                                            <input type="number" step="0.01" class="form-control" id="weight"
                                                    value="{{ $user_weight->weight }}">
                                         </div>
                                     </div>

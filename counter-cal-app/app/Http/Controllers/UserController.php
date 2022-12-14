@@ -217,7 +217,7 @@ class UserController extends Controller
     //Manage Account
     public function manage(){
         $user = Auth::user();
-        $weight = auth()->user()->latestWeight()->weight;
+        $weight = auth()->user()->latestWeight();
         return view('user', ['data' => $user, 'user_weight' => $weight]);
     }
 

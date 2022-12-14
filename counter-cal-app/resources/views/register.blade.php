@@ -38,11 +38,11 @@
                     <div class="form-row">
                         <div class="form-group">
                             <label for="height">Рост(см) :</label>
-                            <input type="number" name="height" id="height" value="{{old('height')}}"/>
+                            <input type="number" step ="1" name="height" id="height" value="{{old('height')}}"/>
                         </div>
                         <div class="form-group">
                             <label for="weight">Вес(кг) :</label>
-                            <input type="number" name="weight" id="weight" value="{{old('weight')}}"/>
+                            <input type="number" step ="0.01" name="weight" id="weight" value="{{old('weight')}}"/>
                         </div>
                     </div>
 
