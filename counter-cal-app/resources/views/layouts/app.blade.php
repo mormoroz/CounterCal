@@ -24,8 +24,8 @@
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><a href="/" class="nav-link px-2 link-dark">Главная</a></li>
             @auth
-            <li><a href="/products" class="nav-link px-2 link-dark">Продукты</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">Статистика</a></li>
+                <li><a href="/products" class="nav-link px-2 link-dark">Продукты</a></li>
+                <li><a href="/statistic" class="nav-link px-2 link-dark">Статистика</a></li>
             @endauth
             <li><a href="/about" class="nav-link px-2 link-dark">О нас</a></li>
         </ul>
@@ -33,6 +33,7 @@
         <div class="d-flex col-md-3 justify-content-end">
 
             @auth
+<<<<<<< HEAD
             <div class="dropdown text-end">
                 <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="{{ Vite::asset('resources/icons/user.png') }}" alt="mdo" width="35" height="35" class="rounded-circle">
@@ -49,7 +50,7 @@
                 </ul>
             </div>
             @elseauth
-            <button type="button" class="btn btn-primary" href="/login">Войти</button>
+                <button type="button" class="btn btn-primary" href="/login">Войти</button>
             @endauth
         </div>
     </header>
