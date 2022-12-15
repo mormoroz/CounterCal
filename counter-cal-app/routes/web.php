@@ -28,6 +28,9 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/user', [UserController::class, 'manage']) -> name('user')->middleware('auth');
+Route::post('/user', [UserController::class, 'edit']) ->middleware('auth');
+
 // Show Welcome Page
 Route::get('/welcome', function () {
     return view('welcome');

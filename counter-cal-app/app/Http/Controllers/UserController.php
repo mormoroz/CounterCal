@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserPageRequest;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\AuthenticationRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\Product;
@@ -9,23 +11,26 @@ use App\Models\User;
 use App\Models\User_weight;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Auth;
+
 
 class UserController extends Controller
 {
 
     // Show Register Form
-    public function create() {
+    public function create()
+    {
         return view('register');
     }
 
     // Show Login Form
-    public function login() {
+    public function login()
+    {
         return view('login');
     }
 
     // Show Dashboard (Home) Page
-    public function home() {
+    public function home()
+    {
 //        //Process products eaten today on breakfast
 //        $breakfastUserProducts = auth()->user()->products()->whereDate('date', Carbon::today())->where('meal_time', 0)->get();
 //        $breakfastTotals['calories'] = 0;
@@ -110,7 +115,7 @@ class UserController extends Controller
         );
 
         //Process each found product
-        foreach ($todaysProducts as $product){
+        foreach ($todaysProducts as $product) {
             //Eaten mass
             $mass = $product->mass_factor;
 
@@ -162,7 +167,8 @@ class UserController extends Controller
     }
 
     //Register New User
-    public function store(RegisterRequest $request){
+    public function store(RegisterRequest $request)
+    {
         $formFields = $request->validate($request->rules());
 
         //todo filter weight from passing to User::create
@@ -190,11 +196,12 @@ class UserController extends Controller
 
 
     //Authenticate User
-    public function authenticate(AuthenticationRequest $request){
+    public function authenticate(AuthenticationRequest $request)
+    {
 
         $formFields = $request->validate($request->rules());
 
-        if(auth()->attempt($formFields)) {
+        if (auth()->attempt($formFields)) {
             $request->session()->regenerate();
 
             return redirect('/');
@@ -205,7 +212,8 @@ class UserController extends Controller
 
 
     // Logout User
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
         auth()->logout();
 
         $request->session()->invalidate();
@@ -215,12 +223,50 @@ class UserController extends Controller
     }
 
     //Manage Account
-    public function manage(){
-        //todo return view to "User Page"
+    public function manage()
+    {
+        $user = Auth::user();
+        $weight = Auth::user()->latestWeight();
+        return view('user', ['data' => $user, 'user_weight' => $weight]);
     }
 
     //Edit User
-    public function edit(){
-        //todo edit some info
+    public function edit(UserPageRequest $request)
+    {
+        $user = Auth::user();
+        $formFields = $request;
+
+        $request->validate($request->rules());
+
+        $weight_value = $formFields['weight'];
+        unset($formFields['weight']);
+
+        $user->first_name = $request->input(['first_name']);
+        $user->last_name = $request->input(['last_name']);
+        $user->gender = $request->get('inlineRadioOptions');
+        $user->activity = $request->get('activityForm');
+        $user->mission = $request->get('inlineRadioOptions1');
+        $user->height = $request->input(['height']);
+        $user->email = $request->input(['email']);
+        $user->age = $request->input(['age']);
+        $user->password = bcrypt($request['password']);
+
+        $user_id = Auth::user()->user_id;
+
+        $weight = User_weight::find($user_id);
+        $weight -> weight = $weight_value;
+        $weight -> date = now();
+
+        $user->updated_at = now();
+
+        $user->save();
+
+        User_weight::create([
+            'user_id' => $user_id,
+            'weight' => $weight_value,
+            'date' => now()
+        ]);
+
+        return redirect('/user')->with('success', "Изменения данных сохранены");
     }
 }
