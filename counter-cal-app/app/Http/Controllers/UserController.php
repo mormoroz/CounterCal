@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserPageRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\AuthenticationRequest;
 use App\Http\Requests\RegisterRequest;
@@ -230,10 +231,13 @@ class UserController extends Controller
     }
 
     //Edit User
-    public function edit(Request $request)
+    public function edit(UserPageRequest $request)
     {
         $user = Auth::user();
         $formFields = $request;
+
+        $request->validate($request->rules());
+
         $weight_value = $formFields['weight'];
         unset($formFields['weight']);
 
@@ -263,6 +267,6 @@ class UserController extends Controller
             'date' => now()
         ]);
 
-        return redirect('/user');
+        return redirect('/user')->with('success', "Изменения данных сохранены");
     }
 }

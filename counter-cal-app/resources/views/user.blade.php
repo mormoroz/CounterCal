@@ -26,6 +26,11 @@
                                 <div class="card-body p-8">
                                     <h6>Личные данные</h6>
                                     <hr class="mt-0 mb-4">
+                                    @if(session(('success')))
+                                        <div class="alert alert-success">
+                                            {{ session('success') }}
+                                        </div>
+                                    @endif
                                     @if($errors->any())
                                         <div class="alert alert-danger">
                                             <ul>
