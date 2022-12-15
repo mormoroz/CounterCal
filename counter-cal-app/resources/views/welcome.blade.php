@@ -83,7 +83,7 @@
             </div>
             <div class="col-md-5">
                 <p class="text-right"><img class="grey" width="400" height="400"
-                                           src="{{ Vite::asset('resources/icons/grey.png') }}"></p>
+                                           src="{{ Vite::asset('resources/icons/home.png') }}"></p>
             </div>
         </div>
         <hr class="featurette-divider">
@@ -102,7 +102,7 @@
             </div>
             <div class="col-md-5 order-md-1">
                 <p class="text-left"><img class="grey" width="400" height="400"
-                                          src="{{ Vite::asset('resources/icons/grey.png') }}"></p>
+                                          src="{{ Vite::asset('resources/icons/products.png') }}"></p>
             </div>
         </div>
         <hr class="featurette-divider">
@@ -116,7 +116,7 @@
             </div>
             <div class="col-md-5">
                 <p class="text-right"><img class="grey" width="400" height="400"
-                                           src="{{ Vite::asset('resources/icons/grey.png') }}"></p>
+                                           src="{{ Vite::asset('resources/icons/end.png') }}"></p>
             </div>
         </div>
 
