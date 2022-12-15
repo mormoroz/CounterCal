@@ -21,7 +21,7 @@
                      alt="Первый слайд">
 
                 <div class="container">
-                    <div class="carousel-caption text-start" id ="start">
+                    <div class="carousel-caption text-start" id="start">
                         <h1>Счетчик калорий CounterCal</h1>
                         <p class="fs-5 lead">Трекер диеты и потери веса</p>
                         <p class="fs-5 lead"><a class="btn btn-lg btn-primary" href="/login">Начать</a></p>
@@ -33,9 +33,10 @@
                      alt="Второй слайд">
 
                 <div class="container">
-                    <div class="carousel-caption" id ="middle">
+                    <div class="carousel-caption" id="middle">
                         <h1>CounterCal - твой помощник на пути к здоровому образу жизни</h1>
-                        <p class="fs-5 lead">Интуитивно понятный дизайн и система, которая учтет ваш образ жизни и цель.</p>
+                        <p class="fs-5 lead">Интуитивно понятный дизайн и система, которая учтет ваш образ жизни и
+                            цель.</p>
                         <p class="fs-5 lead"><a class="btn btn-lg btn-primary" href="/login">Начать</a></p>
                     </div>
                 </div>
@@ -72,7 +73,7 @@
             <div class="col-md-7">
                 <h2 class="featurette-heading fw-normal lh-1">CounterCal это лучшее приложение для контроля за питанием
                     и похудением.</h2>
-                <p class="fs-5 lead">Наш Счетчик Калорий является неотъемлемым приложением, чтобы просто найти
+                <p class="fs-5 lead">Наш Счетчик Калорий является незаменимым приложением, чтобы просто найти
                     информацию о питательной ценности пищевых продуктов, которые Вы едите, а так же легко отслеживать
                     ваш вес.<br></p>
                 <p class="fs-5 lead">Ведите учет калорий в любое время и в любом месте. Принимайте решения, которые
@@ -108,11 +109,10 @@
         <hr class="featurette-divider">
         <div class="row featurette">
             <div class="col-md-7">
-                <h2 class="featurette-heading fw-normal lh-1">И, наконец, этот.<span class="text-muted">Мат.</span></h2>
-                <p class="fs-5 lead">И да, это последний блок репрезентативного контента-заполнителя. Опять же, на самом
-                    деле
-                    не предназначен для чтения, просто здесь, чтобы дать вам лучшее представление о том, как это будет
-                    выглядеть с некоторым реальным содержанием. Ваш контент.</p>
+                <h2 class="featurette-heading fw-normal lh-1">С нами у вас всё получится</h2>
+                <p class="fs-5 lead">   Отметим важность здорового образа жизни абсолютно для каждого
+                    человека, а одним из инструментов, который сможет вам помочь сделать первые шаги на пути к
+                    реализации своих целей, будет приложение CounterCal</p>
             </div>
             <div class="col-md-5">
                 <p class="text-right"><img class="grey" width="400" height="400"

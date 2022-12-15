@@ -44,7 +44,10 @@
     bottom: 140px;
 }
 
+
+
 .featurette-heading {
+    margin-bottom: 30px;
     font-size: 40px;
     vertical-align: inherit;
 }
