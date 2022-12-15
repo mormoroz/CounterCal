@@ -33,7 +33,6 @@
         <div class="d-flex col-md-3 justify-content-end">
 
             @auth
-<<<<<<< HEAD
             <div class="dropdown text-end">
                 <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="{{ Vite::asset('resources/icons/user.png') }}" alt="mdo" width="35" height="35" class="rounded-circle">

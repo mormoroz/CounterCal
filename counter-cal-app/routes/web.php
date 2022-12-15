@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\User_productController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ChartController;
 use Illuminate\Support\Facades\Route;
@@ -17,9 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Show Home Page
-Route::get('/', function () {
-    return view('home');
-})->middleware('auth')->name("home");
+Route::get('/', [UserController::class, 'home'])->middleware('auth')->name("home");
+
 
 // Show Products Page
 Route::get('/products', [ProductController::class, 'index'])->middleware('auth');
@@ -57,3 +57,12 @@ Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 
 Route::get('statistic', [ChartController::class, 'index'])->middleware('auth');
+
+// Store eaten meals
+Route::post('/meal', [User_productController::class, 'store'])->middleware('auth');
+
+// Update eaten meals
+Route::put('/meal', [User_productController::class, 'update'])->middleware('auth');
+
+// Delete eaten meals
+Route::delete('/meal', [User_productController::class, 'destroy'])->middleware('auth');

@@ -171,6 +171,7 @@ class UserController extends Controller
     {
         $formFields = $request->validate($request->rules());
 
+
         //todo filter weight from passing to User::create
         $weight_value = $formFields['weight'];
         unset($formFields['weight']);
