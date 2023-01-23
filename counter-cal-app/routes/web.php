@@ -26,7 +26,7 @@ Route::get('/products', [ProductController::class, 'index'])->middleware('auth')
 
 // Show About Page
 Route::get('/about', function () {
-    return view('about');
+    return view('welcome');
 });
 
 
